@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <h1>{{ $store.state.Todo.name }}</h1>
-    <h1>{{ $store.state.a.name }}</h1>
+    <Todos></Todos>
   </div>
 </template>
 
 <script>
-
+import Todos from "./components/Todos.vue";
 export default {
   name: 'App',
-  mounted() {
-    console.log(this.$store.state);
-  },
+  components: {
+    Todos
+  }
 }
 </script>
