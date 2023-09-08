@@ -5,6 +5,9 @@
       <h1 class="text-primary text-center">All Todos</h1>
       <div class="container">
         <div class="row">
+            <AddTodo/>
+        </div>
+        <div class="row">
             <div class="col-md-4 my-4" v-for="todo of myTodos" :key="todo.id">
                 <b-card bg-variant="primary" text-variant="white" class="text-center">
                     <b-card-text>{{ todo.title }}</b-card-text>
@@ -17,7 +20,9 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import AddTodo from './AddTodo.vue';
 export default {
+    components: { AddTodo },
     computed: mapGetters(['myTodos']),
     methods: mapActions(['getTotos']),
     mounted() {
